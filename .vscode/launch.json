@@ -12,12 +12,13 @@
             "args": [
                 "main:app",
                 "--reload",
-                "--port",
-                "8000",
                 "--host",
-                "localhost"
+                "localhost",
+                "--port",
+                "8000"
             ],
-            "jinja": true
+            "jinja": true,
+            "cwd": "${workspaceFolder}/backend/src" 
         }
     ]
 }

@@ -12,4 +12,3 @@ app.include_router(router_user)
 app.include_router(router_notes)
 
 create_db_and_tables()
-
