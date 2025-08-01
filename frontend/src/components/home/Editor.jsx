@@ -1,4 +1,6 @@
-function Editor() {
+import Footer from "./Footer.jsx"
+
+function Sidebar() {
     return (
             <div className="sidebar">
                 <div className="sidebar_header">
@@ -11,8 +13,9 @@ function Editor() {
                         </svg>
                     </button>
                 </div>
+                <Footer/>
             </div>
     )
 }
 
-export default Editor
+export default Sidebar

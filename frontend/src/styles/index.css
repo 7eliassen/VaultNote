@@ -69,3 +69,24 @@ body {
   height: 100vh;
   width: calc(100% - 250px);
 }
+
+.sidebar .footer {
+  position: fixed;
+  bottom: 0;
+  width: 250px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.sidebar .footer .name {
+  color: #009579;
+  font-weight: 500;
+}
+
+.sidebar .footer .name a {
+  text-decoration: none;
+}
+
+.sidebar .footer .name a:visited {
+  color: #009579;
+}

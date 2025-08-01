@@ -5,7 +5,9 @@ function Home() {
     return (
         <div className="home_container">
             <Editor />
-            <Sidebar />
+            <Sidebar/> 
+                
+            
         </div>
     )
 }
