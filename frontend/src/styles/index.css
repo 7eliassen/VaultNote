@@ -1,5 +1,3 @@
-/* TODO: separate styles by files */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
@@ -12,4 +10,62 @@
 body {
   min-height: 100vh;
   width: 100%;
+}
+
+.home_container {
+  display: flex;
+}
+
+.sidebar {
+  background-color: white;
+  height: 100vh;
+  width: 250px;
+  border-right: 1px solid #ccc;
+} 
+
+.sidebar .sidebar_header {
+  color:  #009579;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .sidebar_header .new_note {
+  margin-left: auto;
+  margin-right: 10px;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009579;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer
+}
+
+.sidebar .sidebar_header .vaultnote_icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  margin-right: 0px;
+  stroke:#009579; 
+  stroke-width: 2;
+  fill: none;
+  color: #009579;
+}
+
+.sidebar .sidebar_header .new_note .add_note_icon {
+  width: 24px;
+  height: 24px;
+  stroke: white;   
+  stroke-width: 2;  
+  fill: none;   
+}
+
+.editor {
+  background-color: rgb(250, 250, 250);
+  height: 100vh;
+  width: calc(100% - 250px);
 }
