@@ -1,8 +1,10 @@
 import EditorHeader from "./EditorHeader"
-function MainWindow() {
+import Editor from "./Editor"
+function MainWindow({ activeNote }) {
     return (
         <div className="main-window">
-            <EditorHeader />
+            <EditorHeader activeNote={activeNote}/>
+            <Editor Note={activeNote}/>
         </div>
     )
 }
