@@ -1,10 +1,10 @@
-import Sidebar from "../components/home/Sidebar.jsx"
-import Editor from "../components/home/Editor.jsx"
+import Sidebar from "../components/home/MainWindow.jsx"
+import MainWindow from "../components/home/Sidebar.jsx"
 
 function Home() {
     return (
         <div className="home_container">
-            <Editor />
+            <MainWindow />
             <Sidebar/> 
                 
             

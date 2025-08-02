@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+:root {
+  --vaultnote-color: #009579;
+  --header-height: 100px;
+  --footer-height: 25px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +22,8 @@ body {
   display: flex;
 }
 
+/* Sidebar */
+
 .sidebar {
   background-color: white;
   height: 100vh;
@@ -24,11 +32,15 @@ body {
 } 
 
 .sidebar .sidebar_header {
-  color:  #009579;
-  height: 50px;
+  color:  var(--vaultnote-color);
+  height: var(--header-height);
   border-bottom: 1px solid #ccc;
+}
+
+.sidebar .sidebar_header .sidebar_header_header {
   display: flex;
   align-items: center;
+  padding-top: 10px;
 }
 
 .sidebar .sidebar_header .new_note {
@@ -39,10 +51,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #009579;
+  background-color: var(--vaultnote-color);
   border-radius: 10px;
   border: none;
-  cursor: pointer
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+}
+
+.sidebar .sidebar_header .new_note:hover {
+  background-color: #00796b;
+  transition: all 0.1s ease-in-out;
 }
 
 .sidebar .sidebar_header .vaultnote_icon {
@@ -50,10 +69,10 @@ body {
   height: 24px;
   margin-left: 10px;
   margin-right: 0px;
-  stroke:#009579; 
+  stroke:var(--vaultnote-color); 
   stroke-width: 2;
   fill: none;
-  color: #009579;
+  color: var(--vaultnote-color);
 }
 
 .sidebar .sidebar_header .new_note .add_note_icon {
@@ -64,7 +83,18 @@ body {
   fill: none;   
 }
 
-.editor {
+.sidebar .sidebar_header .search_note {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+}
+
+
+.main-window {
   background-color: rgb(250, 250, 250);
   height: 100vh;
   width: calc(100% - 250px);
@@ -76,10 +106,11 @@ body {
   width: 250px;
   text-align: center;
   border-top: 1px solid #ccc;
+  height: var(--footer-height)
 }
 
 .sidebar .footer .name {
-  color: #009579;
+  color: var(--vaultnote-color);
   font-weight: 500;
 }
 
@@ -88,5 +119,60 @@ body {
 }
 
 .sidebar .footer .name a:visited {
-  color: #009579;
+  color: var(--vaultnote-color);
+}
+
+.sidebar .sidebar_container {
+  flex: 1;
+  flex-direction: column;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  overflow-y: scroll;
+}
+
+.sidebar-note-active {
+  background-color: rgb(204, 204, 204);
+  transition: all 0.1s ease-in-out;
+}
+
+.sidebar-note {
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  transition: all 0.1s ease-in-out;
+} 
+
+
+.sidebar-note .delete-note-button {
+  margin-left: auto;
+  margin-right: 5px;
+  height: 30px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(192, 64, 64);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  border: 1px solid #000000;
+  color:white;
+  transition: all 0.1s ease-in-out;
+}
+
+.sidebar-note .delete-note-button:hover {
+  background-color: rgb(255, 0, 0);
+  transition: all 0.1s ease-in-out;
+}
+  
+
+
+/*Main window*/
+
+.editor-header {
+  height: var(--header-height);
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  /*Display only when editor is open*/
+  display: None;
 }
