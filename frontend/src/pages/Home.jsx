@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 import { useState, useEffect } from "react"
 import Sidebar from "../components/home/Sidebar.jsx"
 import MainWindow from "../components/home/MainWindow.jsx"
 import axios from "axios"
 import userContext from "../context/userContext.jsx"
 import { useNavigate } from "react-router-dom";
+=======
+import { useState, useEffect} from "react"
+import Sidebar from "../components/home/Sidebar.jsx"
+import MainWindow from "../components/home/MainWindow.jsx"
+>>>>>>> 539b9111647a15ca46548c43f25a6b4f5fcf498a
 
 function Home() {
     const [activeNote, setActiveNote] = useState(-1)
     const [notes, setNotes] = useState([])
+<<<<<<< HEAD
     const token = localStorage.getItem("token");
     const navigate = useNavigate();
     const [username, changeUsername] = useState("");
@@ -180,6 +187,32 @@ function Home() {
                 handleUpdateTitle={handleUpdateTitle}
                 handlePutNote={putNote}
             />  
+=======
+
+    const handleValueChange = (index) => {
+        setActiveNote(index)
+    }
+
+    const handleNewNote = (index) => {
+        setNotes([...notes, {id: index, title: "New Note", content: "testtest"}])
+    } 
+
+    function handleDeleteNote(i) {
+        setNotes(notes.filter((_, index) => index !== i))
+    }
+
+    return (
+        <div className="home_container">
+             <Sidebar 
+             activeNote={activeNote} 
+             activeNoteChange={handleValueChange} 
+             notes={notes}
+             handleNewNote={handleNewNote}
+             handleDeleteNote={handleDeleteNote}
+             />
+
+            <MainWindow activeNote={activeNote === -1 ? null : notes[activeNote]} />  
+>>>>>>> 539b9111647a15ca46548c43f25a6b4f5fcf498a
         </div>
     )
 }

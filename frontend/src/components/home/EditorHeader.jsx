@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useRef } from "react"
 
 function EditorHeader({ activeNote: Note, handleUpdateTitle, handlePutNote}) {
@@ -48,3 +49,14 @@ function EditorHeader({ activeNote: Note, handleUpdateTitle, handlePutNote}) {
 }
 
 export default EditorHeader
+=======
+function EditorHeader({ activeNote }) {
+    return (
+        <div className="editor-header" style={{ display: activeNote ? "" : "none" }}>
+            <h2>{activeNote ? activeNote.title : ""}</h2>
+        </div>
+    );
+}
+
+export default EditorHeader
+>>>>>>> 539b9111647a15ca46548c43f25a6b4f5fcf498a
