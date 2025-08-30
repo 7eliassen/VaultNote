@@ -7,7 +7,7 @@ from app.schemas.user import User
 from app.database import *
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
-
+#test
 app.include_router(router_auth)
 app.include_router(router_user)
 app.include_router(router_notes)
