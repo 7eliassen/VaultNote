@@ -11,6 +11,7 @@ function Registration() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [secPassword, setSecPassword] = useState("")
 
   async function registration(userName, passwd) {
     try {
@@ -40,12 +41,19 @@ function Registration() {
         <form>
           <input type="text" placeholder="Enter your email" className={styles.input} onChange={(e) => setUsername(e.target.value)}/>
           <input type="password" placeholder="Create a password" className={styles.input} onChange={(e) => setPassword(e.target.value)}/>
-          <input type="password" placeholder="Confirm your password" className={styles.input} />
+          <input type="password" placeholder="Confirm your password" className={styles.input} onChange={(e) => setSecPassword(e.target.value)}/>
           <input type="button" className={styles.button} value="Signup" onClick={async () => {
+            if (password !== secPassword) {
+              alert("Different passwords")
+              return
+            }
             const reg_response = await registration(username, password)
-            if (reg_response)
+            if (reg_response){
               alert("You are registered now")
               navigate("/login")
+            }else {
+              alert("Error... Try another login")
+            }
           }}/>
         </form>
         <div className={styles.signup}>

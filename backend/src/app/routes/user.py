@@ -1,5 +1,5 @@
 from typing import Annotated, List
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session, select
 from app.schemas.user import User as UserDB
 from app.models.user import User
@@ -11,6 +11,9 @@ router = APIRouter(tags=["users"])
 
 @router.post("/users/")
 def create_user(user: User, session: Session = Depends(get_session)):
+    is_user_exists = session.exec(select(UserDB).where(UserDB.username == user.username)).first()
+    if is_user_exists:
+        raise HTTPException(status_code=403, detail="Username already exists")
     hashed_password = get_password_hash(user.password)
     new_user = UserDB(username=user.username, password_hashed=hashed_password)
     session.add(new_user)
