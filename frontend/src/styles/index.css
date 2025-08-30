@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --vaultnote-color: #009579;
+  --header-height: 100px;
+  --footer-height: 55px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home_container {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+
+.sidebar {
+  background-color: white;
+  height: 100vh;
+  width: 250px;
+  border-right: 1px solid #ccc;
+} 
+
+.sidebar .sidebar_header {
+  color:  var(--vaultnote-color);
+  height: var(--header-height);
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar .sidebar_header .sidebar_header_header {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.sidebar .sidebar_header .new_note {
+  margin-left: auto;
+  margin-right: 10px;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--vaultnote-color);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+}
+
+.sidebar .sidebar_header .new_note:hover {
+  background-color: #00796b;
+  transition: all 0.1s ease-in-out;
+}
+
+.sidebar .sidebar_header .vaultnote_icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  margin-right: 0px;
+  stroke:var(--vaultnote-color); 
+  stroke-width: 2;
+  fill: none;
+  color: var(--vaultnote-color);
+}
+
+.sidebar .sidebar_header .new_note .add_note_icon {
+  width: 24px;
+  height: 24px;
+  stroke: white;   
+  stroke-width: 2;  
+  fill: none;   
+}
+
+.sidebar .sidebar_header .search_note {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+}
+
+
+.main-window {
+  background-color: rgb(250, 250, 250);
+  height: 100vh;
+  width: calc(100% - 250px);
+}
+
+.sidebar .footer {
+  position: fixed;
+  bottom: 0;
+  width: 250px;
+  text-align: left;
+  border-top: 1px solid #ccc;
+  height: var(--footer-height)
+}
+
+.sidebar .footer .name {
+  color: var(--vaultnote-color);
+  font-weight: 500;
+}
+
+.sidebar .footer .name a {
+  text-decoration: none;
+}
+
+.sidebar .footer .name a:visited {
+  color: var(--vaultnote-color);
+}
+
+.sidebar .footer .exit-button {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.sidebar .sidebar_container {
+  flex: 1;
+  flex-direction: column;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+}
+
+
+.sidebar-note {
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  transition: all 0.1s ease-in-out;
+} 
+
+.sidebar h3 {
+  font-weight: normal;
+}
+
+.sidebar_container .is-changed {
+  color: var(--vaultnote-color);
+}
+
+.sidebar_container p {
+  font-size: 12px;
+}
+
+.sidebar-note-active {
+  background-color: rgb(204, 204, 204);
+  transition: all 0.1s ease-in-out;
+}
+
+
+.sidebar-note .delete-note-button {
+  margin-left: auto;
+  margin-right: 5px;
+  height: 30px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(192, 64, 64);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  border: 1px solid #000000;
+  color:white;
+  transition: all 0.1s ease-in-out;
+}
+
+.sidebar-note .delete-note-button:hover {
+  background-color: rgb(255, 0, 0);
+  transition: all 0.1s ease-in-out;
+}
+
+.sidebar-note-content {
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 180px;
+  max-height: 70px;
+  overflow: hidden;
+  white-space: nowrap; 
+
+}
+  
+
+
+
+/*Main window*/
+
+.editor-header {
+  height: var(--header-height);
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+}
+
+.editor-header .save-button {
+  background-color: rgb(204, 204, 204);
+  margin-left: 2px;
+  transition: all 0.1s ease-in-out;
+}
+
+.editor-header .save-button:hover {
+  background-color: rgb(192, 192, 192);
+  transition: all 0.1s ease-in-out;
+}
+
+.editor-header h2 {
+  margin-left: 5px;
+}
+
+.editor-header textarea {
+  width: 100%;
+  resize: none;
+  font-size: 16px;
+  height: 32px;
+  margin-top: 5px;
+  border: none;
+  margin-left:2px;
+}
+
+.editor-header textarea:focus {
+  border:none;
+  outline:none;
+}
+
+.editor {
+  height: calc(100vh - var(--header-height));
+  background-color: #fff;
+}
+
+.editor textarea {
+  border: none;
+  outline:none;
+}
+
+.editor textarea:focus {
+  border: none;
+  outline:none;
+
+}
+
+.editor .editor-text {
+  width: 100%;
+  /* height: 100% - scrolls; */
+  height: 99%;
+  padding: 2px;
+  overflow-y: scroll;
+  resize: none;
+}
