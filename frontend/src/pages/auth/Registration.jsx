@@ -39,7 +39,7 @@ function Registration() {
       <div className={`${styles.auth_container} ${styles.form}`}>
         <header>Signup</header>
         <form>
-          <input type="text" placeholder="Enter your email" className={styles.input} onChange={(e) => setUsername(e.target.value)}/>
+          <input type="text" placeholder="Enter your login" className={styles.input} onChange={(e) => setUsername(e.target.value)}/>
           <input type="password" placeholder="Create a password" className={styles.input} onChange={(e) => setPassword(e.target.value)}/>
           <input type="password" placeholder="Confirm your password" className={styles.input} onChange={(e) => setSecPassword(e.target.value)}/>
           <input type="button" className={styles.button} value="Signup" onClick={async () => {
