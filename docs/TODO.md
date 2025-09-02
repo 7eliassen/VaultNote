@@ -1,9 +1,9 @@
 ### Important
-- [ ] Password rules check
+- [X] Password rules check
     - [X] On the server
 
     - [X] On the client
-        - [ ] Show popup window
+        - [X] Show login and register errors
 
 - [X] Notes search
 

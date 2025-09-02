@@ -26,7 +26,6 @@ function Login() {
       console.error("Login error:", error);
       if (error.status === 401) {
         {
-          alert("Incorrect login or password")
           return false
         }
       }
@@ -35,6 +34,7 @@ function Login() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("")
 
   const navigate = useNavigate();
   
@@ -42,6 +42,7 @@ function Login() {
   return (
     <div className={styles.auth_background}>
       <div className={`${styles.auth_container} ${styles.form}`}>
+        <p className={styles.error_message}>{errorMessage}</p>
         <header>Login</header>
         <form>
           <input type="text" placeholder="Enter your login" onChange={(e) => setUsername(e.target.value)}/>
@@ -51,7 +52,9 @@ function Login() {
           onClick={async () => {
             const login = await getToken(username, password)
             if (login)
-              navigate("/home")       
+              navigate("/home")  
+            else
+              setErrorMessage("Invalid login or password")     
             }}/>
         </form>
         <div className={styles.signup}>
