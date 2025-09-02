@@ -9,6 +9,8 @@ function EditorHeader({ activeNote: Note, handleUpdateTitle, handlePutNote}) {
         handleUpdateTitle(e.target.value)
     }
 
+    /*This is a litle stupid cause editor.jsx has simmilar code but it works*/
+
     useEffect(() => {
         if (!Note) return
 

@@ -1,11 +1,17 @@
 ### Important
 - [ ] Password rules check
-    - [ ] **EASY** On the server
-    - [ ] **EASY** On the client
+    - [X] On the server
 
-- [ ] **HARD** Encrypting notes
+    - [X] On the client
+        - [ ] Show popup window
 
-- [X] **EASY** Notes search 
+- [X] Notes search
+
+- [ ] Handle errors
+    - [ ] Login\registration
+    - [ ] Homepage
+    - [ ] On the server
 ---
 ##### Not important
-- [ ] **HARD** Notes in markdown
+- [ ] Notes in markdown (react-markdown)
+- [ ] Encrypting notes ()

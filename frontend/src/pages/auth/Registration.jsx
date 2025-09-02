@@ -30,7 +30,12 @@ function Registration() {
       console.error("registration error:", error);
       return false
   }
+  }
 
+  function checkPassword(password) {
+    const passwordRequirements = /^[a-zA-Z0-9!@#$%^&*()_\+\-=\[\]{};:'",.<>\/?|~`]{8,}$/
+    return passwordRequirements.test(password)
+    
   }
 
 
@@ -47,14 +52,17 @@ function Registration() {
               alert("Different passwords")
               return
             }
-            const reg_response = await registration(username, password)
-            if (reg_response){
-              alert("You are registered now")
-              navigate("/login")
-            }else {
-              alert("Error... Try another login")
-            }
-          }}/>
+            if (checkPassword(password)) {
+              const reg_response = await registration(username, password)
+              if (reg_response){
+                alert("You are registered now")
+                navigate("/login")
+              }else {
+                alert("Error... Try another login")
+              }
+          } else {
+            
+          }}}/>
         </form>
         <div className={styles.signup}>
           <span>
