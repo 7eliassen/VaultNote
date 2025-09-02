@@ -11,7 +11,8 @@
     - [ ] Login\registration
     - [ ] Homepage
     - [ ] On the server
+
+- [ ] Notes in markdown (react-markdown)
 ---
 ##### Not important
-- [ ] Notes in markdown (react-markdown)
 - [ ] Encrypting notes ()
