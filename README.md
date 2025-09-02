@@ -4,3 +4,5 @@ So far, I have finished only the basic functionality without note encryption.
 In the future (maybe) I will add:
 - Note encryption
 - Formatting notes in Markdown
+
+![Home page](https://raw.githubusercontent.com/7eliassen/VaultNote/refs/heads/master/docs/homepage.png)
