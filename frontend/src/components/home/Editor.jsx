@@ -43,7 +43,7 @@ function Editor({ Note, handleUpdateNote, handlePutNote}) {
                 onChange={handleTextChange} 
                 value={Note ? Note.content : ""}
                 placeholder="Write here...">
-                </textarea>   
+                </textarea>
         </div>
     );
 }

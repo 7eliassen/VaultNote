@@ -11,6 +11,7 @@ function Home() {
     const token = localStorage.getItem("token");
     const navigate = useNavigate();
     const [username, changeUsername] = useState("");
+    const [isSidebarShowed, setIsShowSidebar] = useState(true)
 
     const API_URL = "http://localhost:8000"
     
@@ -161,6 +162,10 @@ function Home() {
             return note
         }))
     }
+
+    const setShowSidebar = () => {
+        setIsShowSidebar(!isSidebarShowed)
+    }
     
     return (
         <div className="home_container">
@@ -171,6 +176,7 @@ function Home() {
                     notes={notes}
                     handleNewNote={handleNewNote}
                     handleDeleteNote={handleDeleteNote}
+                    isSidebarShowed={isSidebarShowed}
                 />
             </userContext.Provider>
 
@@ -179,6 +185,9 @@ function Home() {
                 handleUpdateNote={handleUpdateNote}
                 handleUpdateTitle={handleUpdateTitle}
                 handlePutNote={putNote}
+                setShowSidebar={setShowSidebar}
+                isSidebarShowed={isSidebarShowed}
+                setActiveNote={setActiveNote}
             />  
         </div>
     )

@@ -1,7 +1,7 @@
 import Footer from "./Footer.jsx"
 import { useState, useEffect } from "react"
 
-function Sidebar({ activeNote, activeNoteChange, notes, handleNewNote, handleDeleteNote }) {
+function Sidebar({ activeNote, activeNoteChange, notes, handleNewNote, handleDeleteNote, isSidebarShowed}) {
 
     const [search, setSearch] = useState("")
 
@@ -11,7 +11,7 @@ function Sidebar({ activeNote, activeNoteChange, notes, handleNewNote, handleDel
     }
 
     return (
-        <div className="sidebar">
+        <div className="sidebar" style={{ display: isSidebarShowed? "" : "none" }}>
             <div className="sidebar_header">
                 <div className="sidebar_header_header">
                     <img className="vaultnote_icon" src="/lock.svg" alt="VaultNote Icon" />
@@ -54,10 +54,11 @@ function Sidebar({ activeNote, activeNoteChange, notes, handleNewNote, handleDel
                     </button>
                 </div>
             ))}
+            
         </div>
 
-            <Footer />
-        </div>
+        <Footer />
+    </div>
     )
 }
 

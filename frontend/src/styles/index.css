@@ -19,6 +19,8 @@ body {
   width: 100%;
 }
 
+
+
 .home_container {
   display: flex;
   width: 100%;
@@ -100,16 +102,18 @@ body {
 .main-window {
   background-color: rgb(250, 250, 250);
   height: 100vh;
-  width: calc(100% - 250px);
+  /* width: calc(100% - 250px); */
+  width: auto;
+  flex-grow: 1;
 }
 
 .sidebar .footer {
   position: fixed;
   bottom: 0;
-  width: 250px;
   text-align: left;
   border-top: 1px solid #ccc;
-  height: var(--footer-height)
+  height: var(--footer-height);
+  width: 250px;
 }
 
 .sidebar .footer .name {
@@ -157,7 +161,7 @@ body {
 }
 
 .sidebar_container p {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .sidebar-note-active {
@@ -203,9 +207,11 @@ body {
 /*Main window*/
 
 .editor-header {
-  height: var(--header-height);
+  height: 50px;
   border-bottom: 1px solid #ccc;
   background-color: white;
+  display: flex;
+  align-items: center; 
 }
 
 .editor-header .save-button {
@@ -226,17 +232,33 @@ body {
 .editor-header textarea {
   width: 100%;
   resize: none;
-  font-size: 16px;
+  font-size: 1rem;
   height: 32px;
   margin-top: 5px;
   border: none;
   margin-left:2px;
+  text-align: center;
 }
 
 .editor-header textarea:focus {
   border:none;
   outline:none;
 }
+
+.show-sidebar-button{
+  height: 35px;
+  width: 35px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+
+}
+
+.show-sidebar-svg {
+  height: 30px;
+  width: 30px;
+}
+
 
 .editor {
   height: calc(100vh - var(--header-height));

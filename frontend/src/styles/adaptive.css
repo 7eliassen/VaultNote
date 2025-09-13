@@ -1,0 +1,10 @@
+/* For smartphones */
+@media (max-width: 600px) {
+    h2 {
+        color: red;
+    }
+/*Hide sidebar for phones*/
+    /* .sidebar {
+        display: none;
+    } */
+}
