@@ -6,6 +6,7 @@ from app.database import create_db_and_tables
 from app.schemas.user import User
 from app.database import *
 from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
 #test
 app.include_router(router_auth)
@@ -21,9 +22,10 @@ app.add_middleware(
 )
 
 
-@app.get("/hello")
+@app.get("/")
 async def root():
     return {"message": "Hello World"}
+
 
 
 create_db_and_tables()

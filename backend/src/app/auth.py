@@ -14,10 +14,17 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jwt.exceptions import InvalidTokenError
 from passlib.context import CryptContext
-from .config import SECRET_KEY
 from app.schemas.user import User as UserDB
 from app.database import SessionDep, get_session
+from sys import exit
 
+# Try to get the SECRET_KEY
+try:
+    from .config import SECRET_KEY
+except ModuleNotFoundError:
+    # NOTE: it doesn't stop uvicorn server in --reload mode
+    exit("config.py doesnt't exists. Check README.MD")
+    
 
 
 ALGORITHM = "HS256"
