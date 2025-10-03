@@ -4,6 +4,8 @@ import MainWindow from "../components/home/MainWindow.jsx"
 import axios from "axios"
 import userContext from "../context/userContext.jsx"
 import { useNavigate } from "react-router-dom";
+import API_URL from "../ApiUrl.jsx"
+
 
 function Home() {
     const [activeNote, setActiveNote] = useState(-1)
@@ -12,8 +14,6 @@ function Home() {
     const navigate = useNavigate();
     const [username, changeUsername] = useState("");
     const [isSidebarShowed, setIsShowSidebar] = useState(true)
-
-    const API_URL = "http://localhost:8000"
     
     useEffect(() => {
         axios.get(`${API_URL}/users/me/`, {

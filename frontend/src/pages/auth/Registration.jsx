@@ -3,6 +3,7 @@ import styles from "./auth.module.css";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../../ApiUrl.jsx"
 
 function Registration() {
   // TODO: implement registration
@@ -17,7 +18,7 @@ function Registration() {
 
   async function registration(userName, passwd) {
     try {
-      const response = await axios.post('http://localhost:8000/users/', {
+      const response = await axios.post(`${API_URL}/users/`, {
           username: userName,
           password: passwd
       }, {

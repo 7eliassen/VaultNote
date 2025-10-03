@@ -20,14 +20,36 @@ In the future (maybe) I will add:
 ---
 ## Instalation
 
+### Backend
 **[OPTIONAL]** You can create and activate virtual environment `python -m venv .env`
 
-`pip install -r /backend/requirements.txt`
+`pip install -r backend/requirements.txt`
 
-After this create `/backend/src/app/config.py` file
+After this create `backend/src/app/config.py` file
 
 Then write there `SECRET_KEY = "..."` (You can generate secret key by `openssl rand -hex 32` in your terminal.)
 
 Then start server `uvicorn --host 0.0.0.0 --port 8000 main:app`. (You must be in `/backend/src` folder).
+
+### Frontend
+For frontend you can use any web server. For example nginx.
+
+```
+cd frontend/
+
+npm install
+
+npm run build
+
+mv dist/ /var/www/html
+
+```
+also you must replace 
+`try_files $uri $uri/ =404;`on `try_files $uri $uri/ /index.html;`
+
+in `/etc/nginx/sites-enabled/default`
+
+And you need to replace `API_URL` in `ApiUrl.jsx`
+
 
 

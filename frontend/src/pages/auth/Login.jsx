@@ -3,6 +3,7 @@ import styles from "./auth.module.css"; // import as styles
 import axios from "axios"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../../ApiUrl.jsx"
 
 function Login() {
 
@@ -13,7 +14,7 @@ function Login() {
       params.append("username", username);
       params.append("password", password);
 
-      const response = await axios.post("http://127.0.0.1:8000/token", params, {
+      const response = await axios.post(`${API_URL}/token`, params, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
