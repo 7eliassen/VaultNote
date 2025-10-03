@@ -19,9 +19,15 @@ In the future (maybe) I will add:
 
 ---
 ## Instalation
+
+**[OPTIONAL]** You can create and activate virtual environment `python -m venv .env`
+
 `pip install -r /backend/requirements.txt`
+
 After this create `/backend/src/app/config.py` file
+
 Then write there `SECRET_KEY = "..."` (You can generate secret key by `openssl rand -hex 32` in your terminal.)
+
 Then start server `uvicorn --host 0.0.0.0 --port 8000 main:app`. (You must be in `/backend/src` folder).
 
 

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation} from "react-router-dom";
 import Login from "./pages/auth/Login.jsx";
 import Registration from "./pages/auth/Registration.jsx";
-import Home from "./pages/home.jsx";
+import Home from "./pages/Home.jsx";
 
 
 function App() {
