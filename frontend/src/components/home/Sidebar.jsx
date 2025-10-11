@@ -1,6 +1,6 @@
 import Footer from "./Footer.jsx"
 import { useState, useEffect } from "react"
-
+import UploadIcon from "./UploadIcon.jsx"
 function Sidebar({ activeNote, activeNoteChange, notes, handleNewNote, handleDeleteNote, isSidebarShowed}) {
 
     const [search, setSearch] = useState("")
@@ -41,7 +41,9 @@ function Sidebar({ activeNote, activeNoteChange, notes, handleNewNote, handleDel
                 >
                     <div className={note.isChanged ? "sidebar-note-content is-changed" : "sidebar-note-content"}>
                         <h3>{note.title ? note.title : "..."}</h3>
-                        {note.isChanged ? <p className="is-changed">is changed</p> : <p>saved</p> }
+                        {note.isChanged ? 
+                                <UploadIcon />
+                            : <p>saved</p> }
                     </div>
                     <button
                         className="delete-note-button"

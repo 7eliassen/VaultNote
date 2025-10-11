@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/index.css'
-
+import './styles/animation.css'
 import Root from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
